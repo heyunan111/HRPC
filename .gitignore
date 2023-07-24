@@ -1,9 +1,2 @@
-rholog-*
-sim-*
-bin/libs
-bin/RhoBundle
-bin/tmp
-bin/target
-bin/*.ap_
-*.o
-*.jar
+cmake-build-debug
+.gitignore
