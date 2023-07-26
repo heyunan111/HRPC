@@ -43,7 +43,11 @@
 					},
 					"parentIndex" : 1,
 					"projectIndex" : 0,
-					"source" : "example/callee"
+					"source" : "example/callee",
+					"targetIndexes" : 
+					[
+						0
+					]
 				},
 				{
 					"build" : "example/caller",
@@ -68,10 +72,23 @@
 						2,
 						3
 					],
-					"name" : "RPC"
+					"name" : "RPC",
+					"targetIndexes" : 
+					[
+						0
+					]
 				}
 			],
-			"targets" : []
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "example_callee::@493cd8b262c97a98b12b",
+					"jsonFile" : "target-example_callee-Debug-3f082a38da261836fa1f.json",
+					"name" : "example_callee",
+					"projectIndex" : 0
+				}
+			]
 		}
 	],
 	"kind" : "codemodel",

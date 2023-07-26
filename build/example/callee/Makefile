@@ -116,6 +116,68 @@ depend:
 	cd /home/hyn/RPC/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+example/callee/CMakeFiles/example_callee.dir/rule:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/callee/CMakeFiles/example_callee.dir/rule
+.PHONY : example/callee/CMakeFiles/example_callee.dir/rule
+
+# Convenience name for target.
+example_callee: example/callee/CMakeFiles/example_callee.dir/rule
+.PHONY : example_callee
+
+# fast build rule for target.
+example_callee/fast:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/build
+.PHONY : example_callee/fast
+
+__/user.pb.o: __/user.pb.cc.o
+.PHONY : __/user.pb.o
+
+# target to build an object file
+__/user.pb.cc.o:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/__/user.pb.cc.o
+.PHONY : __/user.pb.cc.o
+
+__/user.pb.i: __/user.pb.cc.i
+.PHONY : __/user.pb.i
+
+# target to preprocess a source file
+__/user.pb.cc.i:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/__/user.pb.cc.i
+.PHONY : __/user.pb.cc.i
+
+__/user.pb.s: __/user.pb.cc.s
+.PHONY : __/user.pb.s
+
+# target to generate assembly for a file
+__/user.pb.cc.s:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/__/user.pb.cc.s
+.PHONY : __/user.pb.cc.s
+
+userService.o: userService.cc.o
+.PHONY : userService.o
+
+# target to build an object file
+userService.cc.o:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/userService.cc.o
+.PHONY : userService.cc.o
+
+userService.i: userService.cc.i
+.PHONY : userService.i
+
+# target to preprocess a source file
+userService.cc.i:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/userService.cc.i
+.PHONY : userService.cc.i
+
+userService.s: userService.cc.s
+.PHONY : userService.s
+
+# target to generate assembly for a file
+userService.cc.s:
+	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/userService.cc.s
+.PHONY : userService.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +186,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... example_callee"
+	@echo "... __/user.pb.o"
+	@echo "... __/user.pb.i"
+	@echo "... __/user.pb.s"
+	@echo "... userService.o"
+	@echo "... userService.i"
+	@echo "... userService.s"
 .PHONY : help
 
 

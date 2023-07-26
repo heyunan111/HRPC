@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -rdynamic CMakeFiles/example_callee.dir/userService.cc.o CMakeFiles/example_callee.dir/__/user.pb.cc.o -o ../../../bin/example_callee   -L/home/hyn/RPC/lib  -Wl,-rpath,/home/hyn/RPC/lib -lprotobuf 

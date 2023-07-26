@@ -1,7 +1,12 @@
 [
 {
-  "directory": "/home/hyn/RPC/build",
-  "command": "/usr/bin/clang++   -g -std=gnu++20 -o CMakeFiles/RPC.dir/main.cpp.o -c /home/hyn/RPC/main.cpp",
-  "file": "/home/hyn/RPC/main.cpp"
+  "directory": "/home/hyn/RPC/build/example/callee",
+  "command": "/usr/bin/clang++  -I/home/hyn/RPC/src/include -I/home/hyn/RPC/example -g -std=gnu++20 -o CMakeFiles/example_callee.dir/userService.cc.o -c /home/hyn/RPC/example/callee/userService.cc",
+  "file": "/home/hyn/RPC/example/callee/userService.cc"
+},
+{
+  "directory": "/home/hyn/RPC/build/example/callee",
+  "command": "/usr/bin/clang++  -I/home/hyn/RPC/src/include -I/home/hyn/RPC/example -g -std=gnu++20 -o CMakeFiles/example_callee.dir/__/user.pb.cc.o -c /home/hyn/RPC/example/user.pb.cc",
+  "file": "/home/hyn/RPC/example/user.pb.cc"
 }
 ]
