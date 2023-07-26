@@ -1,6 +1,4 @@
-src/CMakeFiles/RPC.dir/rpcApplication.cc.o: \
-  /home/hyn/RPC/src/rpcApplication.cc \
-  /home/hyn/RPC/src/include/rpcApplication.h \
+src/CMakeFiles/RPC.dir/rpcConfig.cc.o: /home/hyn/RPC/src/rpcConfig.cc \
   /home/hyn/RPC/src/include/rpcConfig.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/string \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -166,13 +164,21 @@ src/CMakeFiles/RPC.dir/rpcApplication.cc.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/node_handle.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h \
-  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iostream \
+  /home/hyn/RPC/src/logger.h /usr/local/include/glog/logging.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/chrono \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ratio \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/limits \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ctime \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/parse_numbers.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cstddef \
+  /usr/lib/llvm-14/lib/clang/14.0.0/include/__stddef_max_align_t.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/cstring \
+  /usr/include/string.h /usr/include/strings.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ostream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ios \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/exception \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception_ptr.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/cxxabi_init_exception.h \
-  /usr/lib/llvm-14/lib/clang/14.0.0/include/__stddef_max_align_t.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/typeinfo \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/nested_exception.h \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ios_base.h \
@@ -194,12 +200,41 @@ src/CMakeFiles/RPC.dir/rpcApplication.cc.o: \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/locale_facets.tcc \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_ios.tcc \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/ostream.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/sstream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/istream \
   /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/istream.tcc \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/sstream.tcc \
   /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
   /usr/include/x86_64-linux-gnu/bits/confname.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/linux/close_range.h
+  /usr/include/linux/close_range.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/vector \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_bvector.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/vector.tcc \
+  /usr/local/include/glog/platform.h /usr/local/include/glog/export.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/atomic \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/atomic_base.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/atomic_lockfree_defines.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/atomic_wait.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/climits \
+  /usr/lib/llvm-14/lib/clang/14.0.0/include/limits.h \
+  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h /usr/include/syscall.h \
+  /usr/include/x86_64-linux-gnu/sys/syscall.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd.h \
+  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+  /usr/include/x86_64-linux-gnu/bits/syscall.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_mutex.h \
+  /usr/local/include/glog/log_severity.h \
+  /usr/local/include/glog/vlog_is_on.h \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iostream \
+  /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/variant

@@ -1,8 +1,11 @@
 #include "rpcApplication.h"
+#include "rpcConfig.h"
 
 #include <cstdlib>
 #include <iostream>
 #include <unistd.h>
+
+rpcConfig rpcApplication::rpcconfig_{};
 
 rpcApplication &rpcApplication::instance() {
   static rpcApplication rpcApp;
@@ -37,5 +40,12 @@ void rpcApplication::init(int argc, char **argv) {
     }
   }
 
-  // TODO:config
+  rpcconfig_.loadConfigFile(s.c_str());
+
+  std::cout << "rpcserverip:" << rpcconfig_.load("rpcserverip") << std::endl;
+  std::cout << "rpcserverport:" << rpcconfig_.load("rpcserverport")
+            << std::endl;
+  std::cout << "zookeeperip:" << rpcconfig_.load("zookeeperip") << std::endl;
+  std::cout << "zookeeperport:" << rpcconfig_.load("zookeeperport")
+            << std::endl;
 }

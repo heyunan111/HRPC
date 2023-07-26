@@ -10,7 +10,7 @@ public:
   void loadConfigFile(const char *file);
 
 private:
-  void skipSpace(std::string);
+  void skipSpace(std::string &str);
 
 private:
   std::unordered_map<std::string, std::string> config_;

@@ -2,6 +2,7 @@
 #include <string>
 
 #include "../user.pb.h"
+#include "rpcApplication.h"
 
 class UserService : public example::UserServiceRpc {
 public:
@@ -29,8 +30,9 @@ public:
   }
 };
 
-int main() {
-  UserService s;
-  s.Login("hyn", "qqqq");
+int main(int argc, char **argv) {
+  // UserService s;
+  // s.Login("hyn", "qqqq");
+  rpcApplication::init(argc, argv);
   return 0;
 }
