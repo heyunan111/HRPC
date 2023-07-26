@@ -15,8 +15,17 @@ public:
              const ::example::LoginRequest *request,
              ::example::LoginResponse *response,
              ::google::protobuf::Closure *done) override {
-    int a = 1;
-    int b = 23;
+    auto name = request->name();
+    auto pwd = request->pwd();
+
+    auto res = Login(name, pwd);
+
+    response->set_sucess(res);
+    auto *resCode = response->mutable_result();
+    resCode->set_errmsg("null");
+    resCode->set_errcode(0);
+
+    done->Run();
   }
 };
 
