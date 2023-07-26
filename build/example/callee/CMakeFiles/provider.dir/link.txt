@@ -1,1 +1,0 @@
-/usr/bin/clang++ -g -rdynamic CMakeFiles/provider.dir/userService.cc.o CMakeFiles/provider.dir/__/user.pb.cc.o -o ../../../bin/provider   -L/home/hyn/RPC/lib  -Wl,-rpath,/home/hyn/RPC/lib -lprotobuf 

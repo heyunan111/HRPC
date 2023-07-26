@@ -1,17 +1,15 @@
 #include "rpcConfig.h"
-#include "logger.h"
+#include <glog/logging.h>
 
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
 #include <variant>
 
-Logger log("rpcConfig");
-
 std::string rpcConfig::load(const std::string &key) {
   auto it = config_.find(key);
   if (it == config_.end()) {
-    LOG_ERROR("not find key");
+    LOG(ERROR) << "key not find";
     return "";
   }
   return it->second;
@@ -20,7 +18,7 @@ std::string rpcConfig::load(const std::string &key) {
 void rpcConfig::loadConfigFile(const char *file) {
   auto fp = fopen(file, "r");
   if (fp == nullptr) {
-    LOG_FATAL("file not find");
+    LOG(FATAL) << "file not find";
     exit(EXIT_FAILURE);
   }
   while (!feof(fp)) {

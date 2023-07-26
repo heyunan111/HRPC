@@ -69,24 +69,10 @@ include src/CMakeFiles/RPC.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/RPC.dir/flags.make
 
-src/CMakeFiles/RPC.dir/logger.cc.o: src/CMakeFiles/RPC.dir/flags.make
-src/CMakeFiles/RPC.dir/logger.cc.o: ../src/logger.cc
-src/CMakeFiles/RPC.dir/logger.cc.o: src/CMakeFiles/RPC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/RPC.dir/logger.cc.o"
-	cd /home/hyn/RPC/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/RPC.dir/logger.cc.o -MF CMakeFiles/RPC.dir/logger.cc.o.d -o CMakeFiles/RPC.dir/logger.cc.o -c /home/hyn/RPC/src/logger.cc
-
-src/CMakeFiles/RPC.dir/logger.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RPC.dir/logger.cc.i"
-	cd /home/hyn/RPC/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/hyn/RPC/src/logger.cc > CMakeFiles/RPC.dir/logger.cc.i
-
-src/CMakeFiles/RPC.dir/logger.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RPC.dir/logger.cc.s"
-	cd /home/hyn/RPC/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/hyn/RPC/src/logger.cc -o CMakeFiles/RPC.dir/logger.cc.s
-
 src/CMakeFiles/RPC.dir/rpcApplication.cc.o: src/CMakeFiles/RPC.dir/flags.make
 src/CMakeFiles/RPC.dir/rpcApplication.cc.o: ../src/rpcApplication.cc
 src/CMakeFiles/RPC.dir/rpcApplication.cc.o: src/CMakeFiles/RPC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/RPC.dir/rpcApplication.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/RPC.dir/rpcApplication.cc.o"
 	cd /home/hyn/RPC/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/RPC.dir/rpcApplication.cc.o -MF CMakeFiles/RPC.dir/rpcApplication.cc.o.d -o CMakeFiles/RPC.dir/rpcApplication.cc.o -c /home/hyn/RPC/src/rpcApplication.cc
 
 src/CMakeFiles/RPC.dir/rpcApplication.cc.i: cmake_force
@@ -100,7 +86,7 @@ src/CMakeFiles/RPC.dir/rpcApplication.cc.s: cmake_force
 src/CMakeFiles/RPC.dir/rpcConfig.cc.o: src/CMakeFiles/RPC.dir/flags.make
 src/CMakeFiles/RPC.dir/rpcConfig.cc.o: ../src/rpcConfig.cc
 src/CMakeFiles/RPC.dir/rpcConfig.cc.o: src/CMakeFiles/RPC.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/RPC.dir/rpcConfig.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/RPC.dir/rpcConfig.cc.o"
 	cd /home/hyn/RPC/build/src && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/RPC.dir/rpcConfig.cc.o -MF CMakeFiles/RPC.dir/rpcConfig.cc.o.d -o CMakeFiles/RPC.dir/rpcConfig.cc.o -c /home/hyn/RPC/src/rpcConfig.cc
 
 src/CMakeFiles/RPC.dir/rpcConfig.cc.i: cmake_force
@@ -113,19 +99,17 @@ src/CMakeFiles/RPC.dir/rpcConfig.cc.s: cmake_force
 
 # Object files for target RPC
 RPC_OBJECTS = \
-"CMakeFiles/RPC.dir/logger.cc.o" \
 "CMakeFiles/RPC.dir/rpcApplication.cc.o" \
 "CMakeFiles/RPC.dir/rpcConfig.cc.o"
 
 # External object files for target RPC
 RPC_EXTERNAL_OBJECTS =
 
-../lib/libRPC.a: src/CMakeFiles/RPC.dir/logger.cc.o
 ../lib/libRPC.a: src/CMakeFiles/RPC.dir/rpcApplication.cc.o
 ../lib/libRPC.a: src/CMakeFiles/RPC.dir/rpcConfig.cc.o
 ../lib/libRPC.a: src/CMakeFiles/RPC.dir/build.make
 ../lib/libRPC.a: src/CMakeFiles/RPC.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library ../../lib/libRPC.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../../lib/libRPC.a"
 	cd /home/hyn/RPC/build/src && $(CMAKE_COMMAND) -P CMakeFiles/RPC.dir/cmake_clean_target.cmake
 	cd /home/hyn/RPC/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/RPC.dir/link.txt --verbose=$(VERBOSE)
 

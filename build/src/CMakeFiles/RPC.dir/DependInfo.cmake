@@ -8,7 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/hyn/RPC/src/logger.cc" "src/CMakeFiles/RPC.dir/logger.cc.o" "gcc" "src/CMakeFiles/RPC.dir/logger.cc.o.d"
   "/home/hyn/RPC/src/rpcApplication.cc" "src/CMakeFiles/RPC.dir/rpcApplication.cc.o" "gcc" "src/CMakeFiles/RPC.dir/rpcApplication.cc.o.d"
   "/home/hyn/RPC/src/rpcConfig.cc" "src/CMakeFiles/RPC.dir/rpcConfig.cc.o" "gcc" "src/CMakeFiles/RPC.dir/rpcConfig.cc.o.d"
   )

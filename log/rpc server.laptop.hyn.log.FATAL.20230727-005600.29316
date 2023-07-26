@@ -1,0 +1,5 @@
+Log file created at: 2023/07/27 00:56:00
+Running on machine: laptop
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F20230727 00:56:00.708709 29316 rpcApplication.cc:57] zookeeperport:2181

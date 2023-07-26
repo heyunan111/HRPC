@@ -727,7 +727,9 @@ example/callee/CMakeFiles/example_callee.dir/userService.cc.o: ../example/callee
   /usr/include/google/protobuf/message.h \
   /usr/include/google/protobuf/extension_set.h \
   /usr/include/c++/11/cassert \
-  /usr/include/google/protobuf/service.h
+  /usr/include/google/protobuf/service.h \
+  ../src/include/rpcApplication.h \
+  ../src/include/rpcConfig.h
 
 
 ../example/callee/userService.cc:
@@ -821,6 +823,8 @@ example/callee/CMakeFiles/example_callee.dir/userService.cc.o: ../example/callee
 /usr/include/c++/11/ext/concurrence.h:
 
 /usr/include/c++/11/bits/allocated_ptr.h:
+
+../src/include/rpcConfig.h:
 
 /usr/include/c++/11/bits/unique_ptr.h:
 
@@ -1007,6 +1011,8 @@ example/callee/CMakeFiles/example_callee.dir/userService.cc.o: ../example/callee
 /usr/include/c++/11/atomic:
 
 /usr/include/c++/11/ext/type_traits.h:
+
+../src/include/rpcApplication.h:
 
 /usr/include/c++/11/bits/char_traits.h:
 

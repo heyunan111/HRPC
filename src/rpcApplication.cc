@@ -5,6 +5,8 @@
 #include <iostream>
 #include <unistd.h>
 
+#include <glog/logging.h>
+
 rpcConfig rpcApplication::rpcconfig_{};
 
 rpcApplication &rpcApplication::instance() {
@@ -17,6 +19,9 @@ void showArgsHelp() {
 }
 
 void rpcApplication::init(int argc, char **argv) {
+  google::InitGoogleLogging("rpc server");
+  FLAGS_log_dir = "/home/hyn/RPC/log";
+
   if (argc < 2) {
     showArgsHelp();
     exit(EXIT_FAILURE);
@@ -41,11 +46,4 @@ void rpcApplication::init(int argc, char **argv) {
   }
 
   rpcconfig_.loadConfigFile(s.c_str());
-
-  std::cout << "rpcserverip:" << rpcconfig_.load("rpcserverip") << std::endl;
-  std::cout << "rpcserverport:" << rpcconfig_.load("rpcserverport")
-            << std::endl;
-  std::cout << "zookeeperip:" << rpcconfig_.load("zookeeperip") << std::endl;
-  std::cout << "zookeeperport:" << rpcconfig_.load("zookeeperport")
-            << std::endl;
 }

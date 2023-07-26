@@ -147,12 +147,12 @@ src/clean: src/CMakeFiles/RPC.dir/clean
 src/CMakeFiles/RPC.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=1,2,3,4 "Built target RPC"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=1,2,3 "Built target RPC"
 .PHONY : src/CMakeFiles/RPC.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/RPC.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/RPC.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/RPC.dir/rule
@@ -173,12 +173,12 @@ src/CMakeFiles/RPC.dir/clean:
 example/callee/CMakeFiles/example_callee.dir/all: src/CMakeFiles/RPC.dir/all
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=5,6,7 "Built target example_callee"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=4,5,6 "Built target example_callee"
 .PHONY : example/callee/CMakeFiles/example_callee.dir/all
 
 # Build rule for subdir invocation for target.
 example/callee/CMakeFiles/example_callee.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 7
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/callee/CMakeFiles/example_callee.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 0
 .PHONY : example/callee/CMakeFiles/example_callee.dir/rule

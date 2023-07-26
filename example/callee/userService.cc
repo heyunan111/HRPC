@@ -34,5 +34,6 @@ int main(int argc, char **argv) {
   // UserService s;
   // s.Login("hyn", "qqqq");
   rpcApplication::init(argc, argv);
+
   return 0;
 }

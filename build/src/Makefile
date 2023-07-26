@@ -130,30 +130,6 @@ RPC/fast:
 	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/build
 .PHONY : RPC/fast
 
-logger.o: logger.cc.o
-.PHONY : logger.o
-
-# target to build an object file
-logger.cc.o:
-	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/logger.cc.o
-.PHONY : logger.cc.o
-
-logger.i: logger.cc.i
-.PHONY : logger.i
-
-# target to preprocess a source file
-logger.cc.i:
-	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/logger.cc.i
-.PHONY : logger.cc.i
-
-logger.s: logger.cc.s
-.PHONY : logger.s
-
-# target to generate assembly for a file
-logger.cc.s:
-	cd /home/hyn/RPC/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/logger.cc.s
-.PHONY : logger.cc.s
-
 rpcApplication.o: rpcApplication.cc.o
 .PHONY : rpcApplication.o
 
@@ -211,9 +187,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... RPC"
-	@echo "... logger.o"
-	@echo "... logger.i"
-	@echo "... logger.s"
 	@echo "... rpcApplication.o"
 	@echo "... rpcApplication.i"
 	@echo "... rpcApplication.s"
