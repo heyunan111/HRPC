@@ -1,13 +1,40 @@
 syntax = "proto3";
 package fixbug;
 
-message LoginRequest {
-  bytes name = 1;
-  bytes pwd = 2;
+option cc_generic_services = true;
+
+message resCode {
+  int32 errcode_ = 1;
+  bytes errmsg_ = 2;
 }
 
-message LoginResponse {
-  int32 errcode = 1;
-  bytes errmsg = 2;
-  bool success = 3;
+message loginReq {
+  bytes name_ = 1;
+  bytes pwd_ = 2;
+}
+
+message loginRes {
+  resCode res_ = 1;
+  bool success_ = 2;
+}
+
+message getFriendListReq { uint32 usrid_ = 1; }
+message user {
+  bytes name_ = 1;
+  uint32 age_ = 2;
+  enum sex {
+    MAN = 0;
+    WOMAN = 1;
+  }
+  sex sex_ = 3;
+}
+
+message getFriendListRes {
+  resCode res = 1;
+  repeated user friend_list = 2;
+}
+
+service UserServiceRpc {
+  rpc Login(loginReq) returns (loginRes);
+  rpc GetFriendLists(getFriendListReq) returns (getFriendListRes);
 }
