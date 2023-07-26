@@ -1,8 +1,7 @@
 [
 {
   "directory": "/home/hyn/RPC/build",
-  "command": "/usr/sbin/clang++ -g -std=gnu++20 -o CMakeFiles/RPC.dir/main.cpp.o -c /home/hyn/RPC/main.cpp",
-  "file": "/home/hyn/RPC/main.cpp",
-  "output": "CMakeFiles/RPC.dir/main.cpp.o"
+  "command": "/usr/bin/clang++   -g -std=gnu++20 -o CMakeFiles/RPC.dir/main.cpp.o -c /home/hyn/RPC/main.cpp",
+  "file": "/home/hyn/RPC/main.cpp"
 }
 ]

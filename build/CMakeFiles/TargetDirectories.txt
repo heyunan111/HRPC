@@ -1,3 +1,8 @@
-/home/hyn/RPC/build/CMakeFiles/RPC.dir
 /home/hyn/RPC/build/CMakeFiles/edit_cache.dir
 /home/hyn/RPC/build/CMakeFiles/rebuild_cache.dir
+/home/hyn/RPC/build/example/CMakeFiles/edit_cache.dir
+/home/hyn/RPC/build/example/CMakeFiles/rebuild_cache.dir
+/home/hyn/RPC/build/example/callee/CMakeFiles/edit_cache.dir
+/home/hyn/RPC/build/example/callee/CMakeFiles/rebuild_cache.dir
+/home/hyn/RPC/build/example/caller/CMakeFiles/edit_cache.dir
+/home/hyn/RPC/build/example/caller/CMakeFiles/rebuild_cache.dir

@@ -10,15 +10,19 @@
 				{
 					"includeDirectories" : 
 					[
-						"/usr/lib/clang/15.0.7/include",
+						"/usr/lib/llvm-14/lib/clang/14.0.0/include",
 						"/usr/local/include",
+						"/usr/include/x86_64-linux-gnu",
 						"/usr/include"
 					],
 					"linkDirectories" : 
 					[
-						"/usr/lib64/gcc/x86_64-pc-linux-gnu/13.1.1",
+						"/usr/lib/gcc/x86_64-linux-gnu/11",
 						"/usr/lib64",
+						"/lib/x86_64-linux-gnu",
 						"/lib64",
+						"/usr/lib/x86_64-linux-gnu",
+						"/usr/lib/llvm-14/lib",
 						"/lib",
 						"/usr/lib"
 					],
@@ -32,8 +36,8 @@
 						"gcc_s"
 					]
 				},
-				"path" : "/usr/sbin/clang",
-				"version" : "15.0.7"
+				"path" : "/usr/bin/clang",
+				"version" : "14.0.0"
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 
@@ -50,18 +54,22 @@
 				{
 					"includeDirectories" : 
 					[
-						"/usr/include/c++/13.1.1",
-						"/usr/include/c++/13.1.1/x86_64-pc-linux-gnu",
-						"/usr/include/c++/13.1.1/backward",
-						"/usr/lib/clang/15.0.7/include",
+						"/usr/include/c++/11",
+						"/usr/include/x86_64-linux-gnu/c++/11",
+						"/usr/include/c++/11/backward",
+						"/usr/lib/llvm-14/lib/clang/14.0.0/include",
 						"/usr/local/include",
+						"/usr/include/x86_64-linux-gnu",
 						"/usr/include"
 					],
 					"linkDirectories" : 
 					[
-						"/usr/lib64/gcc/x86_64-pc-linux-gnu/13.1.1",
+						"/usr/lib/gcc/x86_64-linux-gnu/11",
 						"/usr/lib64",
+						"/lib/x86_64-linux-gnu",
 						"/lib64",
+						"/usr/lib/x86_64-linux-gnu",
+						"/usr/lib/llvm-14/lib",
 						"/lib",
 						"/usr/lib"
 					],
@@ -77,8 +85,8 @@
 						"gcc"
 					]
 				},
-				"path" : "/usr/sbin/clang++",
-				"version" : "15.0.7"
+				"path" : "/usr/bin/clang++",
+				"version" : "14.0.0"
 			},
 			"language" : "CXX",
 			"sourceFileExtensions" : 
@@ -93,10 +101,7 @@
 				"mpp",
 				"CPP",
 				"ixx",
-				"cppm",
-				"ccm",
-				"cxxm",
-				"c++m"
+				"cppm"
 			]
 		}
 	],
