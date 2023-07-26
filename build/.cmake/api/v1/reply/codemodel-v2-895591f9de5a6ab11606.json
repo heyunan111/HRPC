@@ -8,7 +8,8 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
@@ -19,11 +20,26 @@
 					"source" : "."
 				},
 				{
+					"build" : "src",
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
 					"build" : "example",
 					"childIndexes" : 
 					[
-						2,
-						3
+						3,
+						4
 					],
 					"jsonFile" : "directory-example-Debug-b6fca4a6d0a37c6ae6b9.json",
 					"minimumCMakeVersion" : 
@@ -41,12 +57,12 @@
 					{
 						"string" : "3.0"
 					},
-					"parentIndex" : 1,
+					"parentIndex" : 2,
 					"projectIndex" : 0,
 					"source" : "example/callee",
 					"targetIndexes" : 
 					[
-						0
+						1
 					]
 				},
 				{
@@ -56,7 +72,7 @@
 					{
 						"string" : "3.0"
 					},
-					"parentIndex" : 1,
+					"parentIndex" : 2,
 					"projectIndex" : 0,
 					"source" : "example/caller"
 				}
@@ -70,21 +86,30 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					],
 					"name" : "RPC",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 2,
+					"directoryIndex" : 1,
+					"id" : "RPC::@145eef247bfb46b6828c",
+					"jsonFile" : "target-RPC-Debug-638efec3980b36722cc8.json",
+					"name" : "RPC",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
 					"id" : "example_callee::@493cd8b262c97a98b12b",
-					"jsonFile" : "target-example_callee-Debug-3f082a38da261836fa1f.json",
+					"jsonFile" : "target-example_callee-Debug-e7f38052b731de54fb94.json",
 					"name" : "example_callee",
 					"projectIndex" : 0
 				}

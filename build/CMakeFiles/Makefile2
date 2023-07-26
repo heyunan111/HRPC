@@ -63,14 +63,17 @@ CMAKE_BINARY_DIR = /home/hyn/RPC/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: src/all
 all: example/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
+preinstall: src/preinstall
 preinstall: example/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: src/clean
 clean: example/clean
 .PHONY : clean
 
@@ -123,18 +126,59 @@ example/caller/clean:
 .PHONY : example/caller/clean
 
 #=============================================================================
+# Directory level rules for directory src
+
+# Recursive "all" directory target.
+src/all: src/CMakeFiles/RPC.dir/all
+.PHONY : src/all
+
+# Recursive "preinstall" directory target.
+src/preinstall:
+.PHONY : src/preinstall
+
+# Recursive "clean" directory target.
+src/clean: src/CMakeFiles/RPC.dir/clean
+.PHONY : src/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/RPC.dir
+
+# All Build rule for target.
+src/CMakeFiles/RPC.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=1,2,3,4 "Built target RPC"
+.PHONY : src/CMakeFiles/RPC.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/RPC.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/RPC.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/RPC.dir/rule
+
+# Convenience name for target.
+RPC: src/CMakeFiles/RPC.dir/rule
+.PHONY : RPC
+
+# clean rule for target.
+src/CMakeFiles/RPC.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/RPC.dir/build.make src/CMakeFiles/RPC.dir/clean
+.PHONY : src/CMakeFiles/RPC.dir/clean
+
+#=============================================================================
 # Target rules for target example/callee/CMakeFiles/example_callee.dir
 
 # All Build rule for target.
-example/callee/CMakeFiles/example_callee.dir/all:
+example/callee/CMakeFiles/example_callee.dir/all: src/CMakeFiles/RPC.dir/all
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/depend
 	$(MAKE) $(MAKESILENT) -f example/callee/CMakeFiles/example_callee.dir/build.make example/callee/CMakeFiles/example_callee.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=1,2,3 "Built target example_callee"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=5,6,7 "Built target example_callee"
 .PHONY : example/callee/CMakeFiles/example_callee.dir/all
 
 # Build rule for subdir invocation for target.
 example/callee/CMakeFiles/example_callee.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/callee/CMakeFiles/example_callee.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/hyn/RPC/build/CMakeFiles 0
 .PHONY : example/callee/CMakeFiles/example_callee.dir/rule

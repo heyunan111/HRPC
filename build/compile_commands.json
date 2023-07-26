@@ -1,5 +1,20 @@
 [
 {
+  "directory": "/home/hyn/RPC/build/src",
+  "command": "/usr/bin/clang++  -I/home/hyn/RPC/src/include -I/home/hyn/RPC/example -g -std=gnu++20 -o CMakeFiles/RPC.dir/logger.cc.o -c /home/hyn/RPC/src/logger.cc",
+  "file": "/home/hyn/RPC/src/logger.cc"
+},
+{
+  "directory": "/home/hyn/RPC/build/src",
+  "command": "/usr/bin/clang++  -I/home/hyn/RPC/src/include -I/home/hyn/RPC/example -g -std=gnu++20 -o CMakeFiles/RPC.dir/rpcApplication.cc.o -c /home/hyn/RPC/src/rpcApplication.cc",
+  "file": "/home/hyn/RPC/src/rpcApplication.cc"
+},
+{
+  "directory": "/home/hyn/RPC/build/src",
+  "command": "/usr/bin/clang++  -I/home/hyn/RPC/src/include -I/home/hyn/RPC/example -g -std=gnu++20 -o CMakeFiles/RPC.dir/rpcConfig.cc.o -c /home/hyn/RPC/src/rpcConfig.cc",
+  "file": "/home/hyn/RPC/src/rpcConfig.cc"
+},
+{
   "directory": "/home/hyn/RPC/build/example/callee",
   "command": "/usr/bin/clang++  -I/home/hyn/RPC/src/include -I/home/hyn/RPC/example -g -std=gnu++20 -o CMakeFiles/example_callee.dir/userService.cc.o -c /home/hyn/RPC/example/callee/userService.cc",
   "file": "/home/hyn/RPC/example/callee/userService.cc"

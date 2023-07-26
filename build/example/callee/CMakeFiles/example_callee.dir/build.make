@@ -108,6 +108,8 @@ example_callee_EXTERNAL_OBJECTS =
 ../bin/example_callee: example/callee/CMakeFiles/example_callee.dir/userService.cc.o
 ../bin/example_callee: example/callee/CMakeFiles/example_callee.dir/__/user.pb.cc.o
 ../bin/example_callee: example/callee/CMakeFiles/example_callee.dir/build.make
+../bin/example_callee: ../lib/libRPC.a
+../bin/example_callee: /usr/local/lib/libglog.so.0.7.0
 ../bin/example_callee: example/callee/CMakeFiles/example_callee.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/hyn/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../../../bin/example_callee"
 	cd /home/hyn/RPC/build/example/callee && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/example_callee.dir/link.txt --verbose=$(VERBOSE)
