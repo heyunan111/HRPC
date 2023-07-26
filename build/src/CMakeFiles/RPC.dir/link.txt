@@ -1,2 +1,0 @@
-/usr/bin/llvm-ar qc ../../lib/libRPC.a CMakeFiles/RPC.dir/rpcApplication.cc.o CMakeFiles/RPC.dir/rpcConfig.cc.o
-/usr/bin/llvm-ranlib ../../lib/libRPC.a
