@@ -1,10 +1,24 @@
 #include "rpcProvider.h"
 #include "rpcApplication.h"
-#include <functional>
-#include <muduo/net/InetAddress.h>
-#include <muduo/net/TcpServer.h>
+#include "rpcHead.pb.h"
 
-void rpcProvider::notifyService(google::protobuf::Service *service) {}
+#include <glog/logging.h>
+#include <google/protobuf/message.h>
+#include <google/protobuf/stubs/callback.h>
+
+void rpcProvider::notifyService(google::protobuf::Service *service) {
+  serviceInfo service_info;
+  auto desc = service->GetDescriptor();
+  auto service_name = desc->name();
+  auto method_count = desc->method_count();
+  for (int i = 0; i < method_count; ++i) {
+    auto method_desc = desc->method(i);
+    auto method_name = method_desc->name();
+    service_info.methodMap_.insert({method_name, method_desc});
+  }
+  service_info.service_ = service;
+  serviceMap_.insert({service_name, service_info});
+}
 
 void rpcProvider::run() {
   std::string ip = rpcApplication::instance().config().load("rpcserverip");
@@ -31,6 +45,59 @@ void rpcProvider::run() {
   eventLoop_.loop();
 }
 
-void rpcProvider::onConnection(const muduo::net::TcpConnectionPtr &) {}
-void rpcProvider::onMessage(const muduo::net::TcpConnectionPtr &,
-                            muduo::net::Buffer *, muduo::Timestamp) {}
+void rpcProvider::onConnection(const muduo::net::TcpConnectionPtr &conn) {
+  if (!conn->connected())
+    conn->shutdown();
+}
+
+/*
+date format:
+
+rpcHead : service_name method_name args_size
+head_size(4bytes) rpcHead(string) args(string)
+*/
+void rpcProvider::onMessage(const muduo::net::TcpConnectionPtr &TcpConn,
+                            muduo::net::Buffer *buff, muduo::Timestamp time) {
+  std::string buf = buff->retrieveAllAsString();
+  uint32_t head_size;
+  buf.copy((char *)&head_size, 4, 0);
+  std::string rpc_head_str = buf.substr(4, head_size);
+  RPC::rpcHead rpc_head;
+
+  if (!rpc_head.ParseFromString(rpc_head_str)) {
+    LOG(ERROR) << "rpc_head.ParseFromString error, rpc_head:" << rpc_head_str
+               << " func return";
+    return;
+  }
+
+  std::string service_name = rpc_head.service_name_();
+  std::string method_name = rpc_head.method_name_();
+  int args_size = rpc_head.args_size_();
+  std::string args_str = buf.substr(4 + head_size, args_size);
+
+  // debug:
+  std::cout << "service_name : " << service_name << std::endl;
+  std::cout << "method_name : " << method_name << std::endl;
+  std::cout << "args_str : " << args_str << std::endl;
+
+  auto it = serviceMap_.find(service_name);
+  if (it == serviceMap_.end()) {
+    LOG(ERROR) << "service_name : " << service_name << " not find";
+    return;
+  }
+  serviceInfo info = it->second;
+  auto service = info.service_;
+
+  auto it2 = info.methodMap_.find(method_name);
+  if (it2 == info.methodMap_.end()) {
+    LOG(ERROR) << "method_name : " << method_name << " not find";
+    return;
+  }
+  auto methodDes = it2->second;
+
+  auto req = service->GetRequestPrototype(methodDes).New();
+  // google::protobuf::NewCallback();
+}
+
+void rpcProvider::sendResp(const muduo::net::TcpConnectionPtr &,
+                           google::protobuf::Message *) {}

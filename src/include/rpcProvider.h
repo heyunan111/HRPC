@@ -2,8 +2,8 @@
 
 #include <functional>
 #include <google/protobuf/descriptor.h>
+#include <google/protobuf/message.h>
 #include <google/protobuf/service.h>
-#include <memory.h>
 #include <muduo/net/Buffer.h>
 #include <muduo/net/EventLoop.h>
 #include <muduo/net/InetAddress.h>
@@ -19,13 +19,20 @@ public:
   void run();
 
 private:
-  /*
-std::function<void (const TcpConnectionPtr&)> ConnectionCallback;
-std::function<void (const TcpConnectionPtr&,Buffer*,Timestamp)> MessageCallback;
-*/
-
   void onConnection(const muduo::net::TcpConnectionPtr &);
   void onMessage(const muduo::net::TcpConnectionPtr &, muduo::net::Buffer *,
                  muduo::Timestamp);
+  void sendResp(const muduo::net::TcpConnectionPtr &,
+                google::protobuf::Message *);
+
+  struct serviceInfo {
+    const google::protobuf::Service *service_;
+    std::unordered_map<std::string, const google::protobuf::MethodDescriptor *>
+        methodMap_;
+  };
+
+private:
   muduo::net::EventLoop eventLoop_;
+
+  std::unordered_map<std::string, serviceInfo> serviceMap_;
 };
