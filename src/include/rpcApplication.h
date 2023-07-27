@@ -7,6 +7,8 @@ public:
 
   static void init(int argc, char **argv);
 
+  static rpcConfig &config() { return rpcconfig_; }
+
 private:
   rpcApplication() = default;
   rpcApplication(const rpcApplication &) = delete;

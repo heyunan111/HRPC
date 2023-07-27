@@ -3,6 +3,7 @@
 
 #include "../user.pb.h"
 #include "rpcApplication.h"
+#include "rpcProvider.h"
 
 class UserService : public example::UserServiceRpc {
 public:
@@ -31,9 +32,9 @@ public:
 };
 
 int main(int argc, char **argv) {
-  // UserService s;
-  // s.Login("hyn", "qqqq");
   rpcApplication::init(argc, argv);
-
+  rpcProvider provider;
+  provider.notifyService(new UserService());
+  provider.run();
   return 0;
 }
