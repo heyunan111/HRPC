@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include <google/protobuf/descriptor.h>
+#include <google/protobuf/message.h>
 #include <google/protobuf/service.h>
 
 class rpcChannel : public google::protobuf::RpcChannel {

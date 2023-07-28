@@ -42,7 +42,7 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
   */
   uint32_t head_size = rpc_head_str.size();
   std::string req;
-  req.insert(0, (char *)&head_size, 4);
+  req.insert(0, std::string((char *)&head_size, 4));
   req += rpc_head_str;
   req += args_str;
 

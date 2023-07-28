@@ -1,0 +1,5 @@
+Log file created at: 2023/07/28 20:18:53
+Running on machine: laptop
+Running duration (h:mm:ss): 0:00:00
+Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F20230728 20:18:53.076851 33182 rpcChannel.cc:68] connect error!

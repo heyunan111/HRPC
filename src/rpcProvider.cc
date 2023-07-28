@@ -24,7 +24,7 @@ void rpcProvider::run() {
   std::string ip = rpcApplication::instance().config().load("rpcserverip");
   uint16_t port =
       atoi(rpcApplication::instance().config().load("rpcserverport").c_str());
-  muduo::net::InetAddress addr(ip.c_str(), port);
+  muduo::net::InetAddress addr(ip, port);
 
   muduo::net::TcpServer server(&eventLoop_, addr, "rpcProvider");
 
@@ -101,7 +101,7 @@ void rpcProvider::onMessage(const muduo::net::TcpConnectionPtr &TcpConn,
     return;
   }
 
-  auto resp = service->GetRequestPrototype(methodDes).New();
+  auto resp = service->GetResponsePrototype(methodDes).New();
 
   auto done =
       google::protobuf::NewCallback<rpcProvider,
