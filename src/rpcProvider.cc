@@ -86,18 +86,39 @@ void rpcProvider::onMessage(const muduo::net::TcpConnectionPtr &TcpConn,
     return;
   }
   serviceInfo info = it->second;
-  auto service = info.service_;
+  google::protobuf::Service *service = info.service_;
 
   auto it2 = info.methodMap_.find(method_name);
   if (it2 == info.methodMap_.end()) {
     LOG(ERROR) << "method_name : " << method_name << " not find";
     return;
   }
-  auto methodDes = it2->second;
+  const google::protobuf::MethodDescriptor *methodDes = it2->second;
 
   auto req = service->GetRequestPrototype(methodDes).New();
-  // google::protobuf::NewCallback();
+  if (!req->ParseFromString(args_str)) {
+    LOG(ERROR) << "args_str : " << args_str << " parse error";
+    return;
+  }
+
+  auto resp = service->GetRequestPrototype(methodDes).New();
+
+  auto done =
+      google::protobuf::NewCallback<rpcProvider,
+                                    const muduo::net::TcpConnectionPtr &,
+                                    google::protobuf::Message *>(
+          this, &rpcProvider::sendResp, TcpConn, resp);
+
+  service->CallMethod(methodDes, nullptr, req, resp, done);
 }
 
-void rpcProvider::sendResp(const muduo::net::TcpConnectionPtr &,
-                           google::protobuf::Message *) {}
+void rpcProvider::sendResp(const muduo::net::TcpConnectionPtr &conn,
+                           google::protobuf::Message *Resp) {
+  std::string res_str;
+  if (!Resp->SerializeToString(&res_str)) {
+    LOG(ERROR) << "SerializeToString : " << res_str << " error";
+    return;
+  }
+  conn->send(res_str);
+  conn->shutdown();
+}

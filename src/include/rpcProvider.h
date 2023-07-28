@@ -26,7 +26,7 @@ private:
                 google::protobuf::Message *);
 
   struct serviceInfo {
-    const google::protobuf::Service *service_;
+    google::protobuf::Service *service_;
     std::unordered_map<std::string, const google::protobuf::MethodDescriptor *>
         methodMap_;
   };
