@@ -7,6 +7,7 @@
 
 #include <glog/logging.h>
 
+namespace hrpc {
 rpcConfig rpcApplication::rpcconfig_{};
 
 rpcApplication &rpcApplication::instance() {
@@ -20,3 +21,4 @@ void rpcApplication::init(const std::string &file_path,
   FLAGS_log_dir = log_path;
   rpcconfig_.loadConfigFile(file_path.c_str());
 }
+} // namespace hrpc

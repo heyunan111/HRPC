@@ -12,6 +12,7 @@
 #include <string>
 #include <unordered_map>
 
+namespace hrpc {
 class rpcProvider {
 public:
   void notifyService(google::protobuf::Service *service);
@@ -36,3 +37,4 @@ private:
 
   std::unordered_map<std::string, serviceInfo> serviceMap_;
 };
+} // namespace hrpc

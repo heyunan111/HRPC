@@ -2,6 +2,7 @@
 #include "rpcConfig.h"
 #include "rpcController.h"
 
+namespace hrpc {
 class rpcApplication {
 public:
   static rpcApplication &instance();
@@ -19,3 +20,4 @@ private:
 private:
   static rpcConfig rpcconfig_;
 };
+} // namespace hrpc

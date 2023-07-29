@@ -10,6 +10,7 @@
 #include <netinet/in.h>
 #include <sys/socket.h>
 
+namespace hrpc {
 void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
                             google::protobuf::RpcController *controller,
                             const google::protobuf::Message *request,
@@ -117,3 +118,4 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
     return;
   }
 }
+} // namespace hrpc

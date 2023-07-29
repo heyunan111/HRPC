@@ -8,15 +8,15 @@
 
 int main(int argc, char **argv) {
   std::string file_path = argv[1];
-  rpcApplication::init(file_path);
-  example::UserServiceRpc_Stub stub(new rpcChannel());
+  hrpc::rpcApplication::init(file_path);
+  example::UserServiceRpc_Stub stub(new hrpc::rpcChannel());
 
   example::LoginRequest req;
   req.set_name("he yu nan");
   req.set_pwd("123456");
 
   example::LoginResponse resp;
-  rpcController log_connteroller;
+  hrpc::rpcController log_connteroller;
   stub.Login(&log_connteroller, &req, &resp, nullptr);
 
   int errCode = resp.result().errcode();
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
   regReq.set_pwd("Register pwd");
   regReq.set_id(1);
   example::RegisterResponse regResp;
-  rpcController reg_connteroller;
+  hrpc::rpcController reg_connteroller;
   stub.Register(&reg_connteroller, &regReq, &regResp, nullptr);
   errCode = regResp.result().errcode();
   errMsg = regResp.result().errmsg();

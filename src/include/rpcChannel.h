@@ -6,6 +6,8 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/service.h>
 
+namespace hrpc {
+
 class rpcChannel : public google::protobuf::RpcChannel {
 public:
   void CallMethod(const google::protobuf::MethodDescriptor *method,
@@ -14,3 +16,4 @@ public:
                   google::protobuf::Message *response,
                   google::protobuf::Closure *done) override;
 };
+} // namespace hrpc

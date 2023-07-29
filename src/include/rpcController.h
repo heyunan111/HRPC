@@ -3,6 +3,7 @@
 #include <google/protobuf/service.h>
 #include <string>
 
+namespace hrpc {
 class rpcController : public google::protobuf::RpcController {
 public:
   rpcController() : errorText_(""), is_failed_(false) {}
@@ -30,3 +31,4 @@ private:
   std::string errorText_;
   bool is_failed_;
 };
+} // namespace hrpc

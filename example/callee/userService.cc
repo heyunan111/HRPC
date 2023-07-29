@@ -56,8 +56,8 @@ public:
 int main(int argc, char **argv) {
   // std::string file_path = argv[1];
   std::string file_path = "test.conf";
-  rpcApplication::init(file_path);
-  rpcProvider provider;
+  hrpc::rpcApplication::init(file_path);
+  hrpc::rpcProvider provider;
   provider.notifyService(new UserService());
   provider.run();
   return 0;

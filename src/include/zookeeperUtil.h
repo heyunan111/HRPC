@@ -4,6 +4,7 @@
 #include <string>
 #include <zookeeper/zookeeper.h>
 
+namespace hrpc {
 class zkClient {
 public:
   zkClient();
@@ -15,3 +16,4 @@ public:
 private:
   zhandle_t *zhandle_;
 };
+} // namespace hrpc

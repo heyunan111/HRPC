@@ -4,6 +4,7 @@
 #include <semaphore.h>
 #include <zookeeper/zookeeper.h>
 
+namespace hrpc {
 zkClient::zkClient() : zhandle_(nullptr) {}
 
 zkClient::~zkClient() {
@@ -74,3 +75,4 @@ std::string zkClient::get_data(const char *path) {
     return "";
   }
 }
+} // namespace hrpc

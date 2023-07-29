@@ -9,6 +9,7 @@
 #include <google/protobuf/stubs/callback.h>
 #include <zookeeper/zookeeper.h>
 
+namespace hrpc {
 void rpcProvider::notifyService(google::protobuf::Service *service) {
   serviceInfo service_info;
   auto desc = service->GetDescriptor();
@@ -141,3 +142,4 @@ void rpcProvider::sendResp(const muduo::net::TcpConnectionPtr &conn,
   conn->send(res_str);
   conn->shutdown();
 }
+} // namespace hrpc

@@ -5,7 +5,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <variant>
-
+namespace hrpc {
 std::string rpcConfig::load(const std::string &key) {
   auto it = config_.find(key);
   if (it == config_.end()) {
@@ -56,3 +56,4 @@ void rpcConfig::skipSpace(std::string &str) {
     str = str.substr(0, index + 1);
   }
 }
+} // namespace hrpc

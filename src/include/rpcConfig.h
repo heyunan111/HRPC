@@ -3,6 +3,7 @@
 #include <string>
 #include <unordered_map>
 
+namespace hrpc {
 class rpcConfig {
 public:
   std::string load(const std::string &key);
@@ -15,3 +16,4 @@ private:
 private:
   std::unordered_map<std::string, std::string> config_;
 };
+} // namespace hrpc
