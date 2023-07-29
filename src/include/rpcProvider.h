@@ -15,8 +15,20 @@
 namespace hrpc {
 class rpcProvider {
 public:
+  /**
+   * @brief Register a Google Protocol Buffers service with the RpcServer.
+   *
+   * @param service A pointer to the Google Protocol Buffers service to
+   * register.
+   */
   void notifyService(google::protobuf::Service *service);
 
+  /**
+   * @brief Run the RpcServer with the specified number of threads to handle
+   * incoming requests.
+   *
+   * @param thread_num The number of threads to run the RpcServer (default: 5).
+   */
   void run(int thread_num = 5);
 
 private:

@@ -2,8 +2,7 @@
 #include <string>
 
 #include "../user.pb.h"
-#include "rpcApplication.h"
-#include "rpcProvider.h"
+#include "hrpc.h"
 
 class UserService : public example::UserServiceRpc {
 public:

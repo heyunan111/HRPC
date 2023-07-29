@@ -1,6 +1,4 @@
-#include "rpcApplication.h"
-#include "rpcChannel.h"
-#include "rpcController.h"
+#include "hrpc.h"
 #include "user.pb.h"
 
 #include <iostream>
