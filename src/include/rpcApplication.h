@@ -6,7 +6,8 @@ class rpcApplication {
 public:
   static rpcApplication &instance();
 
-  static void init(int argc, char **argv);
+  static void init(const std::string &file_path,
+                   const std::string &log_path = "/tmp");
 
   static rpcConfig &config() { return rpcconfig_; }
 

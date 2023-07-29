@@ -14,36 +14,9 @@ rpcApplication &rpcApplication::instance() {
   return rpcApp;
 }
 
-void showArgsHelp() {
-  std::cout << "format: command -i <configfile>" << std::endl;
-}
-
-void rpcApplication::init(int argc, char **argv) {
+void rpcApplication::init(const std::string &file_path,
+                          const std::string &log_path) {
   google::InitGoogleLogging("rpc server");
-  FLAGS_log_dir = "/home/hyn/RPC/log";
-
-  if (argc < 2) {
-    showArgsHelp();
-    exit(EXIT_FAILURE);
-  }
-
-  int c = 0;
-  std::string s;
-  while ((c = getopt(argc, argv, "i:")) != -1) {
-    switch (c) {
-    case 'i':
-      s = optarg;
-      break;
-    case '?':
-      showArgsHelp();
-      exit(EXIT_FAILURE);
-    case ':':
-      showArgsHelp();
-      exit(EXIT_FAILURE);
-    default:
-      break;
-    }
-  }
-
-  rpcconfig_.loadConfigFile(s.c_str());
+  FLAGS_log_dir = log_path;
+  rpcconfig_.loadConfigFile(file_path.c_str());
 }

@@ -14,6 +14,4 @@ public:
 
 private:
   zhandle_t *zhandle_;
-
-  sem_t sem_;
 };

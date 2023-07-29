@@ -1,5 +1,0 @@
-Log file created at: 2023/07/28 20:14:16
-Running on machine: laptop
-Running duration (h:mm:ss): 0:00:00
-Log line format: [IWEF]yyyymmdd hh:mm:ss.uuuuuu threadid file:line] msg
-F20230728 20:14:16.554666 32094 rpcConfig.cc:21] file not find

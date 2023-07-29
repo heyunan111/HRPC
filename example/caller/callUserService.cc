@@ -7,7 +7,8 @@
 #include <string>
 
 int main(int argc, char **argv) {
-  rpcApplication::init(argc, argv);
+  std::string file_path = argv[1];
+  rpcApplication::init(file_path);
   example::UserServiceRpc_Stub stub(new rpcChannel());
 
   example::LoginRequest req;

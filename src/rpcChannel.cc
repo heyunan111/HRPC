@@ -1,6 +1,7 @@
 #include "rpcChannel.h"
 #include "rpcApplication.h"
 #include "rpcHead.pb.h"
+#include "zookeeperUtil.h"
 
 #include <arpa/inet.h>
 #include <glog/logging.h>
@@ -60,9 +61,29 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
     controller->SetFailed("client fd create error");
   }
 
+  zkClient zkCli;
+  zkCli.start();
+
+  //            /serviceNmae/methodName
+  std::string method_path = "/" + service_name + "/" + method_name;
+  //           example: 127.0.0.1:80
+  std::string host_data = zkCli.get_data(method_path.c_str());
+
+  if (host_data == "") {
+    controller->SetFailed(method_path + " is not exist!");
+    return;
+  }
+
+  int idx = host_data.find(":");
+
+  if (idx == -1) {
+    controller->SetFailed(method_path + " address is invalid!");
+    return;
+  }
+
+  std::string ip = host_data.substr(0, idx);
   uint16_t port =
-      atoi(rpcApplication::instance().config().load("rpcserverport").c_str());
-  std::string ip = rpcApplication::instance().config().load("rpcserverip");
+      atoi(host_data.substr(idx + 1, host_data.size() - idx).c_str());
 
   sockaddr_in server_addr;
   server_addr.sin_family = AF_INET;

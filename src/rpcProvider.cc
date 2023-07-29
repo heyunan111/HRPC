@@ -1,10 +1,13 @@
 #include "rpcProvider.h"
 #include "rpcApplication.h"
 #include "rpcHead.pb.h"
+#include "zookeeperUtil.h"
 
+#include <cstdio>
 #include <glog/logging.h>
 #include <google/protobuf/message.h>
 #include <google/protobuf/stubs/callback.h>
+#include <zookeeper/zookeeper.h>
 
 void rpcProvider::notifyService(google::protobuf::Service *service) {
   serviceInfo service_info;
@@ -20,7 +23,7 @@ void rpcProvider::notifyService(google::protobuf::Service *service) {
   serviceMap_.insert({service_name, service_info});
 }
 
-void rpcProvider::run() {
+void rpcProvider::run(int thread_num) {
   std::string ip = rpcApplication::instance().config().load("rpcserverip");
   uint16_t port =
       atoi(rpcApplication::instance().config().load("rpcserverport").c_str());
@@ -39,8 +42,24 @@ void rpcProvider::run() {
     this->onMessage(conn, buffer, timestamp);
   });
 
-  server.setThreadNum(20);
+  server.setThreadNum(thread_num);
 
+  zkClient zc;
+  zc.start();
+
+  for (auto it : serviceMap_) {
+    //     format: /serviceName/methodName
+    std::string service_name = '/' + it.first;
+    zc.create(service_name.c_str(), nullptr, 0);
+    for (auto it2 : it.second.methodMap_) {
+      std::string method_name = service_name + '/' + it2.first;
+      char data[128]{0};
+      sprintf(data, "%s:%d", ip.c_str(), port);
+
+      // is tmp node
+      zc.create(method_name.c_str(), data, strlen(data), ZOO_EPHEMERAL);
+    }
+  }
   server.start();
   eventLoop_.loop();
 }

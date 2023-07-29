@@ -16,7 +16,7 @@ class rpcProvider {
 public:
   void notifyService(google::protobuf::Service *service);
 
-  void run();
+  void run(int thread_num = 5);
 
 private:
   void onConnection(const muduo::net::TcpConnectionPtr &);

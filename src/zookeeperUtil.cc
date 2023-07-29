@@ -38,15 +38,18 @@ void zkClient::start() {
     3. watcher call back thread
   */
 
+  // def session time out : 30s
+  // zookeeper will auto send heart msg ervery 1/3 * timeout
   zhandle_ = zookeeper_init(connstr.c_str(), gloab_watcher, 30000, nullptr,
                             nullptr, 0);
   LOG_IF(FATAL, (zhandle_ == nullptr)) << "zookeeper_init error !";
 
   sem_t sem;
   sem_init(&sem, 0, 0);
-  zoo_get_context(zhandle_);
+  zoo_set_context(zhandle_, &sem);
   sem_wait(&sem);
 }
+
 void zkClient::create(const char *path, const char *data, int datalen,
                       int state) {
   int flage = zoo_exists(zhandle_, path, 0, nullptr);
