@@ -27,8 +27,24 @@ int main() {
   std::string errMsg = resp.result().errmsg();
   bool success = resp.sucess();
 
-  std::cout << "errCode" << errCode << std::endl;
-  std::cout << "errMsg" << errMsg << std::endl;
-  std::cout << "success" << success << std::endl;
+  std::cout << "Login" << std::endl;
+  std::cout << "errCode  " << errCode << std::endl;
+  std::cout << "errMsg  " << errMsg << std::endl;
+  std::cout << "success  " << success << std::endl;
+
+  /////////////////////////////////////////////////////////////////////////////////////////////////
+  example::RegisterRequest regReq;
+  regReq.set_name("Register name");
+  regReq.set_pwd("Register pwd");
+  regReq.set_id(1);
+  example::RegisterResponse regResp;
+  stub.Register(nullptr, &regReq, &regResp, nullptr);
+  errCode = regResp.result().errcode();
+  errMsg = regResp.result().errmsg();
+  success = regResp.sucess();
+  std::cout << "Register" << std::endl;
+  std::cout << "errCode  " << errCode << std::endl;
+  std::cout << "errMsg  " << errMsg << std::endl;
+  std::cout << "success  " << success << std::endl;
   return 0;
 }

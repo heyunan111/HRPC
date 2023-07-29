@@ -75,10 +75,10 @@ void rpcProvider::onMessage(const muduo::net::TcpConnectionPtr &TcpConn,
   int args_size = rpc_head.args_size_();
   std::string args_str = buf.substr(4 + head_size, args_size);
 
-  // debug:
-  std::cout << "service_name : " << service_name << std::endl;
-  std::cout << "method_name : " << method_name << std::endl;
-  std::cout << "args_str : " << args_str << std::endl;
+  // // debug:
+  // std::cout << "service_name : " << service_name << std::endl;
+  // std::cout << "method_name : " << method_name << std::endl;
+  // std::cout << "args_str : " << args_str << std::endl;
 
   auto it = serviceMap_.find(service_name);
   if (it == serviceMap_.end()) {

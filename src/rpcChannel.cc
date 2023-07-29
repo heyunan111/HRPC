@@ -46,11 +46,11 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
   req += rpc_head_str;
   req += args_str;
 
-  // debug:
-  std::cout << "service_name : " << service_name << std::endl;
-  std::cout << "method_name : " << method_name << std::endl;
-  std::cout << "args_str : " << args_str << std::endl;
-  std::cout << "req : " << req << std::endl;
+  // // debug:
+  // std::cout << "service_name : " << service_name << std::endl;
+  // std::cout << "method_name : " << method_name << std::endl;
+  // std::cout << "args_str : " << args_str << std::endl;
+  // std::cout << "req : " << req << std::endl;
 
   int client_fd = socket(AF_INET, SOCK_STREAM, 0);
   LOG_IF(FATAL, (client_fd == -1)) << "client fd create error";
