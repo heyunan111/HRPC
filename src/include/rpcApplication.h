@@ -1,5 +1,6 @@
 #pragma once
 #include "rpcConfig.h"
+#include "rpcController.h"
 
 class rpcApplication {
 public:

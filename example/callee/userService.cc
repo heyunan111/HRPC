@@ -53,13 +53,7 @@ public:
   }
 };
 
-int main() {
-  std::vector<char *> args = {
-      const_cast<char *>(
-          "example_callee"), // argv[0] 通常是程序名，可以设置任意值
-      const_cast<char *>("-i"), const_cast<char *>("test.conf")};
-  int argc = args.size();
-  char **argv = args.data();
+int main(int argc, char **argv) {
   rpcApplication::init(argc, argv);
   rpcProvider provider;
   provider.notifyService(new UserService());

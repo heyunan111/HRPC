@@ -21,6 +21,7 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
   if (!request->SerializeToString(&args_str)) {
     LOG(ERROR) << "request "
                << "SerializeToString error";
+    controller->SetFailed("request SerializeToString error");
     return;
   }
   RPC::rpcHead rpc_head;
@@ -31,6 +32,7 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
   if (!rpc_head.SerializeToString(&rpc_head_str)) {
     LOG(ERROR) << "rpc_head "
                << "SerializeToString error";
+    controller->SetFailed("rpc_head SerializeToString error");
     return;
   }
 
@@ -53,7 +55,10 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
   // std::cout << "req : " << req << std::endl;
 
   int client_fd = socket(AF_INET, SOCK_STREAM, 0);
-  LOG_IF(FATAL, (client_fd == -1)) << "client fd create error";
+  if (client_fd == -1) {
+    LOG(FATAL) << "client fd create error";
+    controller->SetFailed("client fd create error");
+  }
 
   uint16_t port =
       atoi(rpcApplication::instance().config().load("rpcserverport").c_str());
@@ -64,12 +69,14 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
   server_addr.sin_port = htons(port);
   server_addr.sin_addr.s_addr = inet_addr(ip.c_str());
 
-  LOG_IF(FATAL, (connect(client_fd, (sockaddr *)&server_addr,
-                         sizeof(server_addr)) == -1))
-      << "connect error!";
+  if (connect(client_fd, (sockaddr *)&server_addr, sizeof(server_addr)) == -1) {
+    LOG(FATAL) << "connect error!";
+    controller->SetFailed("connect error");
+  }
 
   if (send(client_fd, req.c_str(), req.size(), 0) == -1) {
     LOG(ERROR) << "send error";
+    controller->SetFailed("send error");
     return;
   }
 
@@ -78,12 +85,14 @@ void rpcChannel::CallMethod(const google::protobuf::MethodDescriptor *method,
 
   if (resp_buf_size == -1) {
     LOG(ERROR) << "recv error";
+    controller->SetFailed("recv error");
     return;
   }
 
   std::string resp(resp_buf, 0, resp_buf_size);
   if (!response->ParseFromString(resp)) {
     LOG(ERROR) << "response ParseFromString : " << resp << " error";
+    controller->SetFailed("response ParseFromString error");
     return;
   }
 }
